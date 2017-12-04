@@ -39,3 +39,7 @@ header {
 .tint:hover:before {
   background: none;
 }
+
+figure {
+  margin: 0 0 0rem;
+}
