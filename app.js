@@ -1,23 +1,42 @@
-const brandsList = ['almay', 'anna sui', 'annabelle', 'benefit', "burt's bees", 'butter london', 'cargo cosmetics', 'china glaze', 'covergirl', 'dalish', 'dior', 'dr. hauschka',
+const brandsList = ['almay', 'annaSui', 'annabelle', 'benefit', "burt'sBees", 'butter london', 'cargo cosmetics', 'china glaze', 'covergirl', 'dalish', 'dior', 'dr. hauschka',
 'e.l.f.', 'essie', 'iman', "l'oreal", 'marcelle', 'maybelline', 'milani', 'mineral fusion', 'misa', 'mistura',
 'moov', 'nyx', 'orly', 'pacifica', 'physicians formula', 'piggy paint', 'pure anada', 'revlon', 'salon perfect', 'sante', 'sinful colours', 'smashbox', 'stila', 'suncoat', 'wet n wild', 'zorah']
+const faceItems = ['blush', 'bronzer', 'foundation']
+
 
 $('.products').append(`
-  <h1>Something goes here</h1>
+  <h1 class="margin-top">Home Page... TBD</h1>
   `)
 
 $('.brand').on('click', function(){
-  console.log('hdks');
   $('.products').empty()
   $('.products').append(`
-    <ul class="list-inline row"></ul>
+    <ul class="list-inline row margin-top"></ul>
   `)
 
   for (var i = 0; i < brandsList.length; i++){
     $('.list-inline').append(`
-      <li class="col-3 list-inline-item"> ${brandsList[i]} </li>
+      <li class="col-3 brand-list list-inline-item"><button type="button" class="btn btn-link" id="${brandsList[i]}"> ${brandsList[i]} </button></li>
       `
     )
   }
-
 })
+
+$('.face').on('click', function(){
+  $('.products').empty()
+
+  for (var i = 0; i < faceItems.length; i++) {
+    $('.products').append(`
+      <button type="button" class="col-3 btn btn-link list-inline-item"> ${faceItems[i]} </button>
+      `)
+  }
+})
+
+//ran into issue with spacing, apostrophes, and periods in brand names.. Need to
+//use regex to get rid of above things -- think about best way to approach and come back to it
+
+for (var i = 0; i < brandsList.length; i++){
+  $(document).on('click', '#' + `${brandsList[i]}`, function(){
+    console.log(this.id);
+  })
+}
