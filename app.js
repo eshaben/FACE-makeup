@@ -11,6 +11,9 @@ $('.products').append(`
 $('.brand').on('click', function(){
   $('.products').empty()
   $('.products').append(`
+    <div class="jumbotron jumbotron-fluid margin-top">
+      <h1 class="display-2 face-title center">BRAND</h1>
+    </div>
     <ul class="list-inline row margin-top"></ul>
   `)
 
