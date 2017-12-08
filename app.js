@@ -25,11 +25,36 @@ $('.brand').on('click', function(){
 $('.face').on('click', function(){
   $('.products').empty()
 
-  for (var i = 0; i < faceItems.length; i++) {
-    $('.products').append(`
-      <button type="button" class="col-3 btn btn-link list-inline-item"> ${faceItems[i]} </button>
-      `)
-  }
+  $('.products').append(`
+    <div class="jumbotron jumbotron-fluid margin-top">
+      <h1 class="display-2 face-title center">FACE</h1>
+    </div>
+
+    <div class="container row faceItems">
+      <div class="col margin-top">
+        <div class="card" style="width: 20rem;">
+          <figure class="">
+            <img class="card-img" src="./blush.png" alt="Card image">
+          </figure>
+        </div>
+      </div>
+      <div class="col margin-top">
+        <div class="card" style="width: 20rem;">
+          <figure class="">
+            <img class="card-img" src="./bronzer_.png" alt="Card image">
+          </figure>
+        </div>
+      </div>
+      <div class="col margin-top">
+        <div class="card" style="width: 20rem;">
+          <figure class="">
+            <img class="card-img" src="./foundation_.png" alt="Card image">
+          </figure>
+        </div>
+      </div>
+    </div>
+    `)
+
 })
 
 //ran into issue with spacing, apostrophes, and periods in brand names.. Need to

@@ -15,6 +15,11 @@ header {
   margin-top: 5vh;
 }
 
+.container {
+  width: 80%;
+  margin: auto;
+}
+
 .tint {
   position: relative;
   float: left;
@@ -46,4 +51,14 @@ figure {
 
 .brand-list {
   margin-left: 6vw;
+}
+
+.jumbotron-fluid {
+  height: 2vh;
+}
+
+.display-2 {
+  font-family: 'Cabin Sketch', cursive;
+  margin-top: -6vh !important;
+  text-align: center;
 }
