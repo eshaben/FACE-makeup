@@ -1,29 +1,29 @@
 const brandsList = [
-{id: 1, brand: 'almay'},
-{id: 2, brand: 'annabelle'},
-{id: 3, brand: 'benefit'},
-{id: 4, brand: 'covergirl'},
-{id: 5, brand: 'dalish'},
-{id: 6, brand: 'dior'},
-{id: 7, brand: 'e.l.f.'},
-{id: 8, brand: 'essie'},
-{id: 9, brand: 'iman'},
-{id: 10, brand: "l'oreal"},
-{id: 11, brand: 'marcelle'},
-{id: 12, brand: 'maybelline'},
-{id: 13, brand: 'milani'},
-{id: 14, brand: 'misa'},
-{id: 15, brand: 'mistura'},
-{id: 16, brand: 'moov'},
-{id: 17, brand: 'nyx'},
-{id: 18, brand: 'orly'},
-{id: 19, brand: 'pacifica'},
-{id: 20, brand: 'revlon'},
-{id: 21, brand: 'sante'},
-{id: 22, brand: 'smashbox'},
-{id: 23, brand: 'stila'},
-{id: 24, brand: 'suncoat'},
-{id: 25, brand: 'zorah'}];
+{id: 1, brand: 'Almay'},
+{id: 2, brand: 'Annabelle'},
+{id: 3, brand: 'Benefit'},
+{id: 4, brand: 'Covergirl'},
+{id: 5, brand: 'Dalish'},
+{id: 6, brand: 'Dior'},
+{id: 7, brand: 'E.l.f.'},
+{id: 8, brand: 'Essie'},
+{id: 9, brand: 'Iman'},
+{id: 10, brand: "L'oreal"},
+{id: 11, brand: 'Marcelle'},
+{id: 12, brand: 'Maybelline'},
+{id: 13, brand: 'Milani'},
+{id: 14, brand: 'Misa'},
+{id: 15, brand: 'Mistura'},
+{id: 16, brand: 'Moov'},
+{id: 17, brand: 'Nyx'},
+{id: 18, brand: 'Orly'},
+{id: 19, brand: 'Pacifica'},
+{id: 20, brand: 'Revlon'},
+{id: 21, brand: 'Sante'},
+{id: 22, brand: 'Smashbox'},
+{id: 23, brand: 'Stila'},
+{id: 24, brand: 'Suncoat'},
+{id: 25, brand: 'Zorah'}];
 const faceItems = ['blush', 'bronzer','foundation'];
 const makeupApiBaseUrl = 'http://makeup-api.herokuapp.com/api/v1/products.json';
 
@@ -91,8 +91,9 @@ for (var i = 0; i < brandsList.length; i++){
 }
 
 function getDataByBrand(brand){
+  let brandName = brand.toLowerCase();
   clearBrandList();
-  $.get(`${makeupApiBaseUrl}?brand=${brand}`, function(data){
+  $.get(`${makeupApiBaseUrl}?brand=${brandName}`, function(data){
     console.log(data);
     loadProductItemsForListView(data, brand)
   })
