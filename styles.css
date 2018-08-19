@@ -49,7 +49,7 @@ figure {
   margin: 0 0 0rem;
 }
 
-.brand-list {
+.brand-list-item {
   margin-left: 6vw;
 }
 
@@ -62,3 +62,12 @@ figure {
   margin-top: -6vh !important;
   text-align: center;
 }
+
+/* .card-columns {
+  @include media-breakpoint-only(lg) {
+    column-count: 4;
+  }
+  @include media-breakpoint-only(xl) {
+    column-count: 5;
+  }
+} */

@@ -37,12 +37,13 @@ $('.brand').on('click', function(){
     <div class="jumbotron jumbotron-fluid margin-top">
       <h1 class="display-2 face-title center">BRAND</h1>
     </div>
-    <ul class="list-inline row margin-top"></ul>
+    <ul class="brand-list list-inline row margin-top"></ul>
+    <div class="item-list container"></div>
   `)
 
   for (var i = 0; i < brandsList.length; i++){
-    $('.list-inline').append(`
-      <li class="col-3 brand-list list-inline-item"><button type="button" class="btn btn-link" id="${brandsList[i].id}"> ${brandsList[i].brand} </button></li>
+    $('.brand-list').append(`
+      <li class="col-3 brand-list-item list-inline-item"><button type="button" class="btn btn-link" id="${brandsList[i].id}"> ${brandsList[i].brand} </button></li>
       `
     )
   }
@@ -90,7 +91,34 @@ for (var i = 0; i < brandsList.length; i++){
 }
 
 function getDataByBrand(brand){
+  clearBrandList();
   $.get(`${makeupApiBaseUrl}?brand=${brand}`, function(data){
     console.log(data);
+    loadProductItemsForListView(data, brand)
   })
+}
+
+function clearBrandList(){
+  $('.brand-list').empty()
+}
+
+function loadProductItemsForListView(items, brand){
+  $('.item-list').append(`
+    <h2 class="brand-name">Brand: ${brand}</h2>
+    <div class="item-cards card-columns"></div>`);
+  for(var i=0; i < items.length; i++){
+    $('.item-cards').append(`
+      <div class="card w-75" style="margin: 5%;">
+        <img class="card-img-top" src= ${items[i].image_link} alt="Card image cap">
+        <div class="card-body">
+          <h4>${items[i].name}</h4>
+          <p class="card-text">${items[i].price}</p>
+        </div>
+      </div>
+    `)
+  }
+}
+
+function loadProductDetailPage(){
+
 }
