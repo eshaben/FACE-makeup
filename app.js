@@ -37,21 +37,21 @@ $('.face').on('click', function(){
       <div class="col margin-top">
         <div class="card" style="width: 20rem;">
           <figure class="">
-            <img class="card-img" src="./blush.png" alt="Card image">
+            <img class="card-img" src="../assets/blush.png" alt="Card image">
           </figure>
         </div>
       </div>
       <div class="col margin-top">
         <div class="card" style="width: 20rem;">
           <figure class="">
-            <img class="card-img" src="./bronzer_.png" alt="Card image">
+            <img class="card-img" src="../assets/bronzer_.png" alt="Card image">
           </figure>
         </div>
       </div>
       <div class="col margin-top">
         <div class="card" style="width: 20rem;">
           <figure class="">
-            <img class="card-img" src="./foundation_.png" alt="Card image">
+            <img class="card-img" src="../assets/foundation_.png" alt="Card image">
           </figure>
         </div>
       </div>
